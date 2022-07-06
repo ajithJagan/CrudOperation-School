@@ -4,6 +4,7 @@ import com.mytry.crud.Entity.StudentEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface StudentService {
@@ -14,10 +15,10 @@ public interface StudentService {
 
     StudentEntity insertStudent(StudentEntity studentEntity);
 
-    StudentEntity getByid(int id);
+    Optional<StudentEntity> getByid(int id);
 
-    List<Integer> total(int register_number);
+    int total(int register_number);
 
 
-
+    int percentage(int register_number);
 }

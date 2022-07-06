@@ -12,6 +12,8 @@ import java.util.List;
 public interface StudentRepo extends JpaRepository<StudentEntity, Integer> {
     @Query(value = "SELECT mark1 + mark2 + mark3 + mark4 + mark5  as total  \n" +
                     "FROM student \n "+"WHERE register_number= ?;", nativeQuery = true)
-    List<Integer> findByregister_number(int register_number);
+    int findByregister_number(int register_number);
+
+
 
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/student")
@@ -30,14 +31,20 @@ public class StudentController {
     }
 
     @GetMapping("/getById{id}")
-    StudentEntity getById(@RequestParam int id){
+    Optional<StudentEntity> getById(@RequestParam int id){
         return studentService.getByid(id);
     }
 
-    @GetMapping("/total")
-    List<Integer> total(@RequestParam int register_number){
-        return studentService.total(register_number);
+    @PostMapping("/total")
+    int total(@RequestParam int id){
+        return studentService.total(id);
     }
+
+    @PostMapping("/percentage")
+    int percentage(@RequestParam int register_number){
+        return studentService.percentage(register_number);
+    }
+
 
 
 

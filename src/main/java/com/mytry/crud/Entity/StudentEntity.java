@@ -6,17 +6,17 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Student")
-//@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Getter
+//@Setter
 public
 class StudentEntity {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "registerNumber")
-    int registerNumber;
+   private int registerNumber;
 
     @Column(name = "Name")
     private String name;
@@ -33,11 +33,12 @@ class StudentEntity {
     private int mark4;
     @Column(name = "mark5")
     private int mark5;
+
     @Column(name = "total")
     private int total;
+
     @Column(name = "percentage")
     private int percentage;
-
 
 
 }
