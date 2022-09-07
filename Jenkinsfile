@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'gradle:3.3.3' } }
+    agent { docker { image 'gradle:7.5.1' } }
       stages {
         stage('log version info') {
       steps {
