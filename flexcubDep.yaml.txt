@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flexcub-test
-        image: <ajiqbrainx/newapp>  
+        image: ajiqbrainx/newapp 
         ports:
         - containerPort: 80
