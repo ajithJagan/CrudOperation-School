@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flexcub-testing-dep
+  labels:
+    app: flexcub-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flexcub-test
+  template:
+    metadata:
+      labels:
+        app: flexcub-test
+    spec:
+      containers:
+      - name: flexcub-test
+        image: <ajiqbrainx/newapp>  
+        ports:
+        - containerPort: 80
